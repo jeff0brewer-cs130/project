@@ -1,0 +1,312 @@
+:root{
+    --inv_size: 15vw;
+    --eqp_size: 10vw;
+}
+
+* {
+    box-sizing: border-box;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 250px auto;
+    grid-template-rows: auto;
+    grid-template-areas: 
+    "a b"
+}
+
+main{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    
+    pointer-events: none;
+}
+
+.equip{
+    display: none;
+    width: 250px;
+    height: fit-content;
+
+    background-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    text-align: center;
+
+    z-index: 100;
+    pointer-events: auto;
+}
+
+.equip header{
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.equip > div{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.equip > nav > div{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-style: solid;
+    border-color: white;
+    border-width: 1px 0 0 0;
+}
+
+.sidebar{
+    grid-area: a;
+    border-style: solid;
+    border-width: 0 1px 0 0;
+    border-color: white;
+}
+
+.character, .equip_char{
+    background-size: cover;
+    background-position: left;
+}
+
+.sidebar > div{
+    width: 100%;
+    height: 70px;
+    background-color: black;
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar > nav{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar input{
+    width: 50%;
+    height: 20px;
+    margin: 10px;
+    font-size: 15px;
+    background-color: black;
+    border-style: solid;
+    border-color: white;
+    border-width: 0 0 1px 0;
+}
+
+.sidebar button{
+    background-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    padding: 5px;
+}
+
+.sidebar > section{
+    width: 100%;
+    max-height: calc(100vh - 350px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.sidebar > section > div{
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+
+    background-position: center;
+    background-size: cover;
+    
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.vault{
+    grid-area: b;
+    overflow-y: scroll;
+    display: none;
+}
+
+.vault > article{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vault > article > div{
+    width: 8%;
+    padding-bottom: 8%;
+    margin: 1%;
+
+    background-position: center;
+    background-size: cover;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.inventory{
+    grid-area: b;
+    overflow-y: scroll;
+    display: none;
+}
+
+.inventory > nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "a m d"
+    "b m e"
+    "c m f"
+    ". m g"
+    ". m h";
+}
+
+.inv{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.inv > section{
+    width: var(--inv_size);
+    height: var(--inv_size);
+    margin: auto;
+}
+
+.inventory section > div{
+    background-position: center;
+    background-size: cover;
+    width: 30%;
+    padding-bottom: 30%;
+    position: relative;
+    margin: 1.5%;
+    background-color: black;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+}
+
+.equipped{
+    grid-area: m;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "a m d"
+    "b m e"
+    "c m f"
+    ". m g"
+    ". m h";
+}
+
+.equipped > section{
+    display: flex;
+    align-items: center;
+}
+
+.equipped > section > div{
+    width: var(--eqp_size);
+    height: 0;
+    padding-bottom: var(--eqp_size);
+    position: relative;
+    border-style: solid;
+    border-width: 1px;
+    border-color: white;
+    pointer-events: none;
+}
+.inventory section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.kinetic{
+    grid-area: a;
+    justify-content: flex-start;
+}
+
+.energy{
+    grid-area: b;
+    justify-content: flex-start;
+}
+
+.power{
+    grid-area: c;
+    justify-content: flex-start;
+}
+
+.head{
+    grid-area: d;
+    justify-content: flex-end;
+}
+
+.arms{
+    grid-area: e;
+    justify-content: flex-end;
+}
+
+.chest{
+    grid-area: f;
+    justify-content: flex-end;
+}
+
+.legs{
+    grid-area: g;
+    justify-content: flex-end;
+}
+
+.classitem{
+    grid-area: h;
+    justify-content: flex-end;
+}
+
+@media (max-width: 1000px){
+    .inventory > div{
+        grid-template-columns: 1fr 1.5fr 1fr;
+    }
+    .equipped{
+        grid-template-columns: 1fr 0fr 1fr;
+    }
+}
