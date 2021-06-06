@@ -1,6 +1,6 @@
 const url_search = new URLSearchParams(window.location.search);
 const auth_code = url_search.get('code');
-const baseURL = 'http://localhost:8081';
+const baseURL = 'http://jb-d2im.herokuapp.com';
 const imageURL = 'https://bungie.net';
 
 const bungieEnum = {
