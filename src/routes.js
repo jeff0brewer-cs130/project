@@ -13,11 +13,6 @@ const encodebase64 = str => {
 
 const bungieURL = 'https://www.bungie.net/Platform';
 
-router.route("/")
-    .get((req, res) => {
-        res.status(200).send({data: "app running"});
-    });
-
 router.route("/authorize/:auth_code")
     .get((req, res) => {
         console.log(`GET /authorize/${req.params.auth_code}`);
